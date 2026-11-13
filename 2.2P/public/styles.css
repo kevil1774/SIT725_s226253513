@@ -1,0 +1,267 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    color-scheme: light;
+
+    --page: #f4f5f4;
+    --card: #ffffff;
+    --text: #202322;
+    --muted: #9aa19e;
+    --line: #e9ecea;
+    --field: #f6f7f6;
+    --accent: #a9c0b7;
+    --accent-strong: #829f94;
+    --button-text: #18201d;
+
+    --shadow: 0 18px 55px rgba(32, 45, 39, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 18px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--page);
+    color: var(--text);
+
+    font-family: 'Inter', Arial, sans-serif;
+
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.page {
+    width: 100%;
+    max-width: 390px;
+}
+
+.calculator {
+    padding: 25px 25px 22px;
+    border-radius: 25px;
+
+    background: var(--card);
+    box-shadow: var(--shadow);
+
+    transition: background 0.2s ease;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 28px;
+}
+
+.course-mark {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.theme-button {
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background: transparent;
+    color: var(--muted);
+
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.theme-button:hover {
+    background: var(--field);
+    color: var(--text);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: var(--accent-strong);
+}
+
+.screen {
+    min-height: 145px;
+
+    padding: 42px 3px 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    overflow-wrap: anywhere;
+}
+
+.expression {
+    min-height: 20px;
+    margin-bottom: 8px;
+
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.result {
+    max-width: 100%;
+
+    color: var(--text);
+    font-size: clamp(42px, 12vw, 54px);
+    font-weight: 500;
+    letter-spacing: -2.5px;
+    line-height: 1.08;
+}
+
+.divider {
+    height: 1px;
+    margin-bottom: 21px;
+
+    background: var(--line);
+}
+
+.fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 12px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    height: 43px;
+
+    padding: 0 11px;
+
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    outline: none;
+
+    background: var(--field);
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: var(--accent-strong);
+
+    box-shadow: 0 0 0 3px rgba(130, 159, 148, 0.13);
+}
+
+.operation-field {
+    grid-column: 1 / -1;
+}
+
+.calculate-button {
+    width: 100%;
+    height: 47px;
+
+    margin-top: 18px;
+
+    border: none;
+    border-radius: 11px;
+
+    background: var(--accent);
+    color: var(--button-text);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.calculate-button:hover {
+    background: var(--accent-strong);
+}
+
+.calculate-button:active {
+    transform: scale(0.985);
+}
+
+.message {
+    min-height: 17px;
+    margin: 14px 0 0;
+
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+footer {
+    margin-top: 17px;
+
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    text-align: center;
+}
+
+/* Dark mode */
+
+body.dark {
+    color-scheme: dark;
+
+    --page: #202322;
+    --card: #292c2b;
+    --text: #f2f3f2;
+    --muted: #929a96;
+    --line: #3b403e;
+    --field: #343937;
+    --accent: #a9c0b7;
+    --accent-strong: #bdd0c8;
+    --button-text: #202522;
+
+    --shadow: 0 18px 55px rgba(0, 0, 0, 0.22);
+}
+
+/* Mobile layout */
+
+@media (max-width: 420px) {
+
+    body {
+        padding: 18px 12px;
+    }
+
+    .calculator {
+        padding: 21px 19px 19px;
+        border-radius: 22px;
+    }
+
+    .screen {
+        min-height: 130px;
+    }
+
+}

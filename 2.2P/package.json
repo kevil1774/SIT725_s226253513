@@ -1,0 +1,12 @@
+{
+  "name": "sit725-task-2-2p",
+  "version": "1.0.0",
+  "description": "SIT725 practical task - Express server and calculator API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
